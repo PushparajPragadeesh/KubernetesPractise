@@ -31,5 +31,4 @@ spec:
   - targetPort: 80
     port: 80
   selector:
-    matchLabels:
-      app: ngnix-pod
+    app: ngnix-pod

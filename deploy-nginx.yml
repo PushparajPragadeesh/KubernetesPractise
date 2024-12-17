@@ -5,17 +5,17 @@ metadata:
   labels:
     app: nginx-deploy
 spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-pod
   template:
     metadata:
-      name: my-nginx-pod
-      labels: 
+      labels:
         app: nginx-pod
     spec:
       containers:
       - name: nginx-container
         image: nginx
-  replicas: 3
-  selector:
-    matchLabels:
-      app:  nginx-pod
-    
+        ports:
+        - containerPort: 80
